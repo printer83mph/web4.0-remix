@@ -1,0 +1,20 @@
+.post {
+  padding: calc(var(--width) * 0.04);
+  width: var(--width);
+}
+.post-img-container {
+  max-width: 100%;
+  overflow: hidden;
+  border: calc(var(--width) * 0.002) solid white;
+}
+.post-img-container.limit-height {
+  height: calc(var(--width) * 0.4);
+}
+.post-title {
+  font-size: calc(var(--width) * 0.07);
+  margin-top: calc(var(--width) * 0.03);
+}
+.post-subtitle {
+  font-size: calc(var(--width) * 0.02);
+  margin-top: calc(var(--width) * 0.015);
+}
