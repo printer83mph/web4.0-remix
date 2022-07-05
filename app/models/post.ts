@@ -1,6 +1,4 @@
-import prisma from '~/lib/prisma'
 import { z } from 'zod'
-import type { Post as PrismaPost } from '@prisma/client'
 
 export type RawPost = {
   title: string
@@ -29,22 +27,22 @@ export const postArgsSchema: z.ZodType<RawPost> = z.lazy(() =>
     )
 )
 
-export function prismaPostToTyped(post: PrismaPost) {
-  return { ...post, isReply: !post.imageUrl } as Post
-}
+// export function prismaPostToTyped(post: PrismaPost) {
+//   return { ...post, isReply: !post.imageUrl } as Post
+// }
 
-export async function createPost({ isReply, ...post }: Post) {
-  return prisma.post.create({ data: post })
-}
+// export async function createPost({ isReply, ...post }: Post) {
+//   return prisma.post.create({ data: post })
+// }
 
-export async function getPosts({ from, to }: { from?: Date; to?: Date } = {}) {
-  const response = await prisma.post.findMany({
-    where: {
-      created: {
-        gte: from,
-        lte: to,
-      },
-    },
-  })
-  return response.map(prismaPostToTyped)
-}
+// export async function getPosts({ from, to }: { from?: Date; to?: Date } = {}) {
+//   const response = await prisma.post.findMany({
+//     where: {
+//       created: {
+//         gte: from,
+//         lte: to,
+//       },
+//     },
+//   })
+//   return response.map(prismaPostToTyped)
+// }
