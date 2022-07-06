@@ -1,12 +1,12 @@
 import clsx from 'clsx'
-import type { RawPost } from '~/models/post'
+import type { Post } from '~/models/post'
 
 import styles from './post-display.css'
 
 export const postDisplayStyles = () => [{ rel: 'stylesheet', href: styles }]
 
 export interface PostDisplayProps {
-  post: RawPost
+  post: Post
   width: number
 }
 
